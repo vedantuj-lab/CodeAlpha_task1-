@@ -1,0 +1,1955 @@
+MASTER PROMPT: PIXORA GALLERY
+1. YOUR ROLE
+
+Act as a senior full-stack developer, frontend architect, UI/UX designer, design-system specialist, JavaScript engineer, database architect, accessibility specialist, security engineer, and QA tester.
+
+Your task is to design and develop a complete, professional, fully functional photography gallery website called PIXORA GALLERY.
+
+The final result must be suitable for a real portfolio project and a CodeAlpha Frontend Development Internship submission.
+
+Do not create a basic tutorial website, generic dashboard, static prototype, or collection of non-functional buttons.
+
+Build a coherent application in which the landing page, authentication, dashboards, gallery, search, filters, favorites, image viewer, and administration features work together.
+
+Every feature must have a defined purpose and a working implementation.
+
+Do not claim that functionality is complete unless the corresponding code exists and has been tested.
+
+PROJECT NAME:
+Pixora Gallery
+
+TAGLINE:
+Every Image Tells a Story.
+
+PRIMARY OBJECTIVE:
+Create an immersive photography platform where users can discover, explore, search, filter, save, and view photographs while administrators can manage gallery content.
+
+SECONDARY OBJECTIVE:
+Demonstrate strong frontend development skills through responsive layouts, interactive JavaScript, polished UI/UX, accessibility, reliable state management, and a professional design system.
+
+TARGET USERS:
+
+Visitors exploring photography.
+Registered members saving and organizing favorite photographs.
+Administrators managing images and gallery categories.
+
+PRIMARY DESIGN PRINCIPLE:
+The photographs must remain the main attraction. Every interface element should support image discovery rather than compete with the photographs.
+
+Use the following technology stack.
+
+FRONTEND:
+
+React
+Vite
+TypeScript
+HTML5
+CSS3
+Tailwind CSS if configured correctly
+Lucide React for icons
+React Router for page navigation
+A suitable animation library such as Framer Motion, if available and justified
+
+BACKEND AND DATA:
+
+Supabase Authentication
+Supabase PostgreSQL database
+Supabase Storage for uploaded images, when configured
+
+LOCAL DEVELOPMENT:
+
+npm
+Vite development server
+Environment variables
+Git and GitHub
+
+DEPLOYMENT:
+
+Vercel or another suitable static/frontend hosting service
+Supabase for authentication and persistent database functionality
+
+IMPORTANT IMPLEMENTATION RULES:
+
+Use a consistent and maintainable architecture.
+Keep reusable UI components separate from page components.
+Keep authentication, gallery data, and business logic separate.
+Avoid putting the entire application into one enormous React component.
+Use reusable components for buttons, cards, dialogs, inputs, navigation, notifications, and loading states.
+Use TypeScript types for users, images, categories, favorites, and application state.
+Do not use a backend framework unnecessarily.
+Do not add unnecessary AI APIs or paid services.
+Do not require an API key for basic gallery browsing.
+Never expose a Supabase service-role key or other privileged secret in frontend code.
+Do not invent credentials.
+If external services are not configured, clearly explain what is needed and provide a safe development fallback.
+
+If Tailwind CSS or another dependency cannot be installed or configured reliably, use a consistent custom CSS implementation instead of leaving the interface broken.
+
+The application must run successfully using the documented installation instructions.
+
+Build the application using this navigation flow:
+
+LANDING PAGE
+|
+|---- Explore Gallery
+| |
+| v
+| PUBLIC GALLERY
+|
+|---- Sign In
+| |
+| v
+| AUTHENTICATION
+| |
+| |---- Administrator
+| | |
+| | v
+| | ADMIN DASHBOARD
+| |
+| |---- Member
+| |
+| v
+| MEMBER DASHBOARD
+|
+|---- Register
+|
+v
+MEMBER ACCOUNT
+
+PUBLIC GALLERY:
+
+View photographs.
+Search photographs.
+Filter photographs.
+Open photographs in the lightbox.
+Browse categories.
+View image descriptions.
+
+MEMBER DASHBOARD:
+
+View personalized information.
+Browse the shared gallery.
+Manage favorites.
+View saved photographs.
+Update basic profile information.
+Manage account preferences.
+
+ADMIN DASHBOARD:
+
+View gallery statistics.
+Add photographs.
+Edit photograph metadata.
+Delete photographs.
+Manage categories.
+Review gallery content.
+
+The public gallery and member gallery must use the same underlying gallery data.
+
+The administrator must be able to manage the same gallery that members browse.
+
+Do not create separate, unrelated image collections for different login roles.
+
+Create a distinctive visual identity for Pixora Gallery.
+
+The website should resemble a premium photography publication combined with a modern image-discovery platform.
+
+DESIGN CHARACTERISTICS:
+
+Editorial photography layouts.
+Large, high-quality photographs.
+Elegant typography.
+Generous whitespace.
+Carefully controlled colors.
+Asymmetric compositions where appropriate.
+Smooth transitions.
+Minimal but useful interface elements.
+Clear visual hierarchy.
+Consistent spacing.
+Strong image presentation.
+Responsive navigation.
+Accessible controls.
+
+Avoid:
+
+Generic administrative dashboards everywhere.
+Excessive gradients.
+Excessive glassmorphism.
+Excessive rounded cards.
+Too many decorative elements.
+Unnecessary animation.
+Repeated identical page layouts for every role.
+Excessive blue throughout the website.
+Large empty sections without purpose.
+Fake charts and meaningless statistics.
+Placeholder buttons that do nothing.
+
+Use different visual identities for the landing page, public gallery, member dashboard, and administrator dashboard while preserving a consistent brand.
+
+Define all colors as reusable CSS variables or design tokens.
+
+A. BRAND COLORS
+
+Primary background:
+#F7F5F0
+
+Secondary background:
+#EDE9E1
+
+Primary text:
+#242522
+
+Secondary text:
+#74746C
+
+Borders:
+#DDD8CE
+
+Card background:
+#FFFFFF
+
+B. PRIMARY ACCENT: TERRACOTTA
+
+Primary accent:
+#C76546
+
+Hover accent:
+#A94E34
+
+Soft accent background:
+#F4E0D7
+
+Use terracotta for:
+
+Primary calls to action.
+Selected controls.
+Important links.
+Active states where appropriate.
+
+C. SECONDARY ACCENT: OLIVE
+
+Primary olive:
+#687453
+
+Deep olive:
+#46523A
+
+Soft olive:
+#E7EBDD
+
+Use olive for:
+
+Secondary actions.
+Success states.
+Nature-related accents.
+Selected category details.
+
+D. DARK EDITORIAL COLORS
+
+Dark background:
+#1E201E
+
+Dark surface:
+#292C29
+
+Dark primary text:
+#F6F4EE
+
+Dark secondary text:
+#B7B9B0
+
+Dark border:
+#41443F
+
+E. SUPPORTING ACCENT
+
+Muted gold:
+#C7A56B
+
+Use muted gold sparingly for featured content, premium details, and decorative highlights.
+
+F. STATUS COLORS
+
+Success:
+#287A52
+
+Warning:
+#9A6700
+
+Error:
+#B42318
+
+Information:
+#365D79
+
+Always ensure readable contrast between text and background.
+
+Do not use a color combination merely because it looks attractive. Verify that the text remains legible and that interactive elements are visually distinguishable.
+
+Do not use the same dominant color combination for every page.
+
+LANDING PAGE:
+
+Warm off-white.
+Charcoal typography.
+Terracotta primary buttons.
+Olive secondary accents.
+Full-width photography.
+
+PUBLIC GALLERY:
+
+Off-white.
+White gallery cards.
+Charcoal text.
+Terracotta active filters.
+Olive category accents.
+
+LOGIN AND REGISTRATION:
+
+Deep charcoal.
+Warm cream form panel.
+Terracotta primary button.
+Muted gold decorative details.
+Subtle photography in the background.
+
+MEMBER DASHBOARD:
+
+Warm cream.
+Olive-green accents.
+Terracotta highlights.
+White cards.
+Minimal shadows.
+
+ADMIN DASHBOARD:
+
+Deep charcoal sidebar.
+Warm-white content area.
+Terracotta action buttons.
+Olive success indicators.
+Restrained gold highlights.
+
+FAVORITES PAGE:
+
+Warm off-white.
+Terracotta favorite icons.
+Charcoal typography.
+Large photographs.
+
+IMAGE LIGHTBOX:
+
+Near-black overlay.
+White typography.
+Minimal controls.
+Subtle terracotta interaction accents.
+
+PROFILE SETTINGS:
+
+Warm white.
+Olive secondary actions.
+Terracotta primary action.
+
+Maintain consistent spacing, typography, buttons, icon sizing, and focus styles across all pages.
+
+Use a premium typography system.
+
+HEADINGS:
+Use an elegant editorial serif typeface, such as Playfair Display or an equivalent.
+
+BODY:
+Use a clean sans-serif typeface, such as Inter.
+
+OPTIONAL DISPLAY TEXT:
+Use the serif font for large hero headlines and selected editorial statements.
+
+TYPOGRAPHY SCALE:
+
+Hero heading:
+Approximately 56–80px on large desktop screens.
+
+Section heading:
+Approximately 32–48px.
+
+Page heading:
+Approximately 28–40px.
+
+Card title:
+Approximately 18–24px.
+
+Body text:
+Approximately 14–17px.
+
+Metadata:
+Approximately 12–14px.
+
+Mobile typography must scale down naturally.
+
+Use responsive typography with clamp() where appropriate.
+
+Do not use excessively small text for essential controls.
+
+Use a consistent spacing scale.
+
+Suggested spacing tokens:
+4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px, and 96px.
+
+Use a consistent content width.
+
+Recommended maximum content width:
+Approximately 1440px.
+
+Create responsive layouts for:
+
+Small mobile phones.
+Large mobile phones.
+Tablets.
+Laptops.
+Desktop monitors.
+Wide screens.
+
+Test at:
+360px.
+390px.
+768px.
+1024px.
+1280px.
+1440px.
+
+The website must not produce horizontal overflow at any supported width.
+
+Navigation, buttons, gallery filters, forms, image cards, and dialogs must remain usable on touchscreens.
+
+Create a complete, visually impressive landing page.
+
+The landing page must be the first page visitors see.
+
+SECTION 1: NAVIGATION BAR
+
+Create a responsive navigation bar.
+
+Left side:
+
+Pixora Gallery logo.
+Small abstract aperture or camera-inspired icon.
+
+Center or right:
+
+Home.
+Explore.
+Collections.
+About.
+
+Right side:
+
+Search icon or search entry point.
+Sign In.
+Join Pixora.
+
+Behavior:
+
+The logo returns to the landing page.
+Home navigates to the landing page.
+Explore opens the public gallery.
+Collections opens a collection/category browsing section.
+About scrolls to the about section or opens the corresponding page.
+Sign In opens the login page.
+Join Pixora opens registration.
+
+On mobile, use a working menu button.
+
+Do not display duplicate navigation links on small screens.
+
+SECTION 2: HERO
+
+Create an immersive hero section.
+
+Headline:
+"Discover the World, One Frame at a Time."
+
+Supporting text:
+"Explore extraordinary moments, remarkable places, and beautiful perspectives through a curated collection of photography."
+
+Primary button:
+"Explore Gallery"
+
+Secondary button:
+"Join the Community"
+
+Primary button:
+
+Navigates to the public gallery.
+
+Secondary button:
+
+Opens registration.
+
+Visual design:
+
+Large featured photograph.
+Asymmetric editorial layout.
+Elegant typography.
+Subtle image reveal animation.
+Restrained decorative elements.
+Clear text contrast.
+
+Use a suitable photography background or image composition.
+
+Do not place text over a visually busy photograph without an overlay or contrast treatment.
+
+SECTION 3: FEATURED PHOTOGRAPHY
+
+Create a featured photography section.
+
+Include:
+
+One large featured photograph.
+Several smaller supporting photographs.
+Image titles.
+Categories.
+Short descriptions.
+
+Clicking any photograph opens the lightbox.
+
+Featured content must come from the same gallery dataset used elsewhere.
+
+SECTION 4: CATEGORY EXPLORATION
+
+Display category cards for:
+
+Nature.
+Architecture.
+Wildlife.
+Travel.
+Street Photography.
+
+Each category card must contain:
+
+A relevant photograph.
+Category name.
+Short description.
+Photograph count.
+
+Clicking a category opens the public gallery with the selected category active.
+
+Counts must be calculated from actual available gallery records.
+
+SECTION 5: GALLERY PREVIEW
+
+Display a selection of gallery images.
+
+Include:
+
+Image cards.
+Image titles.
+Category labels.
+View-image interaction.
+A View All Photos button.
+
+The View All Photos button opens the complete gallery.
+
+SECTION 6: WHY PIXORA
+
+Create a concise feature section explaining:
+
+Easy image discovery.
+Curated categories.
+Full-screen viewing.
+Personal favorites.
+Responsive photography browsing.
+
+Use a small number of polished visual cards.
+
+Do not create unnecessary marketing claims.
+
+SECTION 7: COMMUNITY CALL TO ACTION
+
+Headline:
+"Your Next Favorite Photograph Is Waiting."
+
+Description:
+"Discover new perspectives and save the photographs that inspire you."
+
+Buttons:
+
+Explore Photos.
+Create an Account.
+
+SECTION 8: FOOTER
+
+Include:
+
+Pixora logo.
+Short brand description.
+Navigation links.
+Gallery category links.
+Sign-in link.
+Registration link.
+Copyright year generated dynamically.
+A contact link only if a real contact destination is configured.
+
+Do not invent social media accounts or contact details.
+
+Create a dedicated gallery browsing page.
+
+The gallery must be accessible without requiring registration.
+
+HEADER:
+
+Page title: "Explore Photography".
+Subtitle: "Find your next favorite perspective."
+Total image count.
+
+SEARCH:
+Create a working search input.
+
+Search by:
+
+Image title.
+Description.
+Category.
+Relevant tags.
+
+Requirements:
+
+Case-insensitive matching.
+Immediate result updates.
+Clear-search button.
+Search term preserved while changing categories.
+Clear no-results state.
+
+CATEGORY FILTERS:
+
+All Photos.
+Nature.
+Architecture.
+Wildlife.
+Travel.
+Street.
+
+The active filter must be visually distinguishable.
+
+Filters must operate on real gallery data.
+
+The visible image count must update after filtering and searching.
+
+SORT OPTIONS:
+
+Featured.
+Newest.
+Alphabetical.
+Most Favorited, when the required favorite-count data is available.
+
+Do not show fake sorting options.
+
+GALLERY GRID:
+Use a responsive masonry-style or CSS Grid layout.
+
+Recommended behavior:
+
+Desktop: 3–4 columns, depending on width.
+Tablet: 2–3 columns.
+Mobile: 1–2 columns, depending on card size.
+
+Use natural image aspect ratios where appropriate.
+
+Each image card must contain:
+
+Photograph.
+Image title.
+Category.
+Favorite button where applicable.
+Image-viewing action.
+
+On hover:
+
+Apply a subtle image zoom.
+Reveal or emphasize image metadata.
+Show a clear interaction cue.
+
+On mobile:
+
+Do not rely exclusively on hover to reveal important controls.
+
+PAGINATION OR LOAD MORE:
+Use pagination or a working Load More button if the dataset becomes large.
+
+Avoid rendering an unnecessarily large number of high-resolution images at once.
+
+Include loading states and empty states.
+
+Implement a professional full-screen image viewer.
+
+This is one of the most important features.
+
+OPENING:
+Clicking a gallery image opens the corresponding photograph in the lightbox.
+
+DISPLAY:
+
+Large image.
+Image title.
+Category.
+Description.
+Image position.
+Previous button.
+Next button.
+Close button.
+Favorite control for eligible users.
+Download button where downloading is supported.
+
+NAVIGATION:
+
+Previous button shows the previous image.
+Next button shows the next image.
+Navigation wraps around the filtered gallery results.
+The viewer must respect the currently active category and search results.
+
+KEYBOARD:
+
+Escape closes the lightbox.
+ArrowLeft navigates backward.
+ArrowRight navigates forward.
+
+INTERACTION:
+
+Clicking the dark overlay closes the lightbox.
+Clicking the image does not close the lightbox.
+Scrolling the background is disabled while the lightbox is open.
+Background scrolling is restored when the lightbox closes.
+Focus returns to the image card that opened the viewer.
+Focus remains appropriately managed while the dialog is open.
+
+ACCESSIBILITY:
+
+Use an accessible dialog implementation.
+Provide descriptive labels for controls.
+Ensure keyboard navigation works.
+Provide a visible focus indicator.
+Support reduced motion.
+
+IMAGE LOADING:
+
+Show a loading state where appropriate.
+Handle failed image loads.
+Never display an indefinite loading spinner when an image has failed.
+
+FULLSCREEN:
+Where supported, allow users to enter and exit browser fullscreen mode.
+
+If fullscreen is unavailable, preserve ordinary lightbox functionality.
+
+Implement a working favorites feature.
+
+MEMBER EXPERIENCE:
+
+Click the heart icon to add an image to favorites.
+Click it again to remove the image.
+View all favorites on the Favorites page.
+Open favorite images in the lightbox.
+Remove favorites from the Favorites page.
+Preserve favorite state across page navigation and refresh.
+
+GUEST EXPERIENCE:
+Guests may browse the gallery and open the lightbox.
+
+If a guest attempts to save a favorite:
+
+Prompt them to sign in or register.
+Preserve the intended image ID when practical.
+Return them to the relevant image or gallery after authentication.
+
+PERSISTENCE:
+For authenticated members, store favorites in the database.
+
+Use a favorites table with a unique constraint preventing duplicate favorites for the same user and image.
+
+If a local development mode is needed, use LocalStorage as a clearly identified fallback.
+
+Do not claim that LocalStorage favorites synchronize across devices.
+
+FAVORITE COUNTS:
+If displaying favorite counts, calculate them from actual data.
+
+Do not generate random numbers or hardcode changing statistics.
+
+Create a premium login and registration experience.
+
+The authentication page must have a unique design that differs from the public gallery.
+
+BACKGROUND:
+
+Deep charcoal.
+Subtle photographic background.
+Dark overlay for readability.
+Muted gold details.
+Terracotta primary action.
+
+LAYOUT:
+Use a responsive split-screen design.
+
+Left panel:
+
+Large editorial photograph.
+Pixora branding.
+Headline: "A World of Perspectives."
+Supporting text: "Discover, collect, and revisit the photographs that inspire you."
+
+Right panel:
+
+Login or registration form.
+Clear form labels.
+Input validation.
+Error and success messages.
+Link between login and registration.
+
+On mobile, stack the panels vertically and prevent excessive scrolling.
+
+LOGIN FORM:
+Fields:
+
+Email.
+Password.
+
+Controls:
+
+Show/hide password.
+Remember-me option only if implemented correctly.
+Sign In button.
+Forgot Password link.
+Register link.
+
+VALIDATION:
+
+Required fields.
+Valid email format.
+Password field required.
+Prevent repeated submissions while a request is processing.
+Display understandable authentication errors.
+Display loading feedback.
+
+REGISTRATION FORM:
+Fields:
+
+Display name.
+Email.
+Password.
+Confirm password.
+
+Requirements:
+
+Validate required fields.
+Validate email format.
+Require a reasonable minimum password length.
+Confirm password matches.
+Prevent duplicate account creation through proper authentication handling.
+Display clear success or error messages.
+Never store plaintext passwords in the database.
+
+PASSWORD RECOVERY:
+Implement a working password recovery flow using the configured authentication provider.
+
+If recovery cannot be configured, display an honest explanation rather than a fake success message.
+
+AUTHENTICATION:
+Use Supabase Authentication when the environment is configured.
+
+Support:
+
+Registration.
+Login.
+Logout.
+Session persistence.
+Password recovery.
+Authentication state changes.
+
+Do not implement insecure authentication by storing raw passwords in LocalStorage.
+
+Do not allow a user to choose an administrator role during public registration.
+
+Create two distinct authenticated experiences:
+
+MEMBER.
+ADMINISTRATOR.
+
+ROLE ASSIGNMENT:
+
+Public registration creates a normal member account.
+Administrator privileges must be assigned through a trusted administrative process.
+Do not trust a role supplied by the browser.
+Do not expose privileged credentials in the frontend.
+Verify access permissions on the backend/database layer.
+
+The role must control which pages and actions the user can access.
+
+MEMBER:
+
+Can browse gallery content.
+Can search and filter.
+Can manage their own favorites.
+Can update permitted profile information.
+Cannot create, edit, or delete global gallery content.
+Cannot access the administrator dashboard.
+
+ADMINISTRATOR:
+
+Can access the administration dashboard.
+Can manage gallery content.
+Can manage categories.
+Can view permitted gallery statistics.
+Cannot access another member's private information without an explicitly justified and authorized administrative need.
+
+Protect routes and data operations.
+
+Hiding a button is not sufficient authorization.
+
+Use appropriate database access policies.
+
+Create a dedicated member dashboard with its own visual identity.
+
+COLOR COMBINATION:
+
+Warm cream background.
+Olive-green accents.
+Terracotta highlights.
+White cards.
+Charcoal text.
+
+SIDEBAR OR NAVIGATION:
+
+Overview.
+Explore Gallery.
+My Favorites.
+Profile Settings.
+
+Avoid adding unnecessary menu items.
+
+MEMBER DASHBOARD HEADER:
+
+Welcome message using the member's display name.
+Profile avatar or initials.
+Notification or account control only if functional.
+Logout button.
+
+OVERVIEW PAGE:
+Display:
+
+Welcome card.
+Number of saved favorites.
+Recently viewed images, if viewing history is actually implemented.
+A small selection of recommended or featured photographs.
+
+Any recommendation must be based on a documented, deterministic selection method unless a real recommendation service is implemented.
+
+Do not call a simple selection algorithm artificial intelligence.
+
+MY FAVORITES:
+
+Show the member's saved photographs.
+Allow search and category filtering.
+Open images in the lightbox.
+Remove favorites.
+Display an empty state when there are no favorites.
+
+PROFILE SETTINGS:
+
+Update display name.
+Display the authenticated email.
+Update permitted preferences.
+Provide account logout.
+Show appropriate validation feedback.
+
+Do not allow a member to change their role through profile settings.
+
+SHARED DATA:
+When an administrator adds or updates a gallery image, members should see the changes in the same gallery.
+
+When a member favorites an image, their favorites must remain associated with their own account.
+
+Do not create a separate gallery database for members.
+
+Create a dedicated administration interface.
+
+COLOR COMBINATION:
+
+Deep charcoal sidebar.
+Warm-white main content.
+Terracotta primary actions.
+Olive success indicators.
+Muted gold highlights.
+
+The administrator dashboard must look different from the member dashboard.
+
+ADMIN NAVIGATION:
+
+Overview.
+Manage Images.
+Manage Categories.
+
+Do not add unrelated administrative modules.
+
+OVERVIEW:
+Display real statistics derived from the database:
+
+Total gallery images.
+Total categories.
+Total registered members, only if an authorized query is available.
+Recent image updates.
+
+Do not fabricate statistics.
+
+If the database is empty, show zero and an informative empty state.
+
+MANAGE IMAGES:
+Create a working table or card-based management interface.
+
+Columns or fields:
+
+Thumbnail.
+Title.
+Category.
+Date added.
+Featured status.
+Actions.
+
+Actions:
+
+Add Image.
+Edit.
+Delete.
+Mark as Featured or remove featured status.
+
+ADD IMAGE FORM:
+Fields:
+
+Image title.
+Description.
+Category.
+Image upload or supported image URL.
+Tags.
+Featured status.
+
+Validation:
+
+Required title.
+Required category.
+Valid image source.
+Supported image file type.
+File size limit.
+Clear validation errors.
+
+If image uploads are configured, store images in Supabase Storage.
+
+Store the resulting storage path or URL in the database.
+
+Do not store image binary data inside ordinary database text fields.
+
+EDIT IMAGE:
+Allow the administrator to update:
+
+Title.
+Description.
+Category.
+Tags.
+Featured status.
+Image source where appropriate.
+
+Changes must persist to the database and become visible in the public gallery.
+
+DELETE IMAGE:
+
+Ask for confirmation.
+Explain the effect of deletion.
+Remove or archive the database record according to the chosen implementation.
+Handle storage cleanup where appropriate.
+Prevent a failed database operation from being reported as a successful deletion.
+
+MANAGE CATEGORIES:
+Allow an administrator to:
+
+View categories.
+Create categories.
+Edit category names and descriptions.
+Delete categories only when doing so will not cause invalid image references.
+
+If a category contains images, either prevent deletion or provide a safe reassignment workflow.
+
+Do not create duplicate categories with the same normalized name.
+
+SHARED GALLERY:
+All administrative image changes must be reflected in the public gallery and member dashboard.
+
+Use a shared data source.
+
+Refresh relevant queries or use realtime subscriptions if configured and justified.
+
+Do not simulate successful changes by modifying only the local screen.
+
+Use Supabase PostgreSQL when configured.
+
+Create a simple, maintainable relational schema.
+
+TABLE 1: PROFILES
+
+Suggested fields:
+
+id: UUID, linked to the authenticated user.
+display_name.
+role.
+avatar_url, optional.
+created_at.
+updated_at.
+
+Role values:
+
+member.
+admin.
+
+Role assignment must be trusted and protected.
+
+TABLE 2: IMAGES
+
+Suggested fields:
+
+id: UUID.
+title.
+description.
+image_url or storage_path.
+category_id.
+tags.
+is_featured.
+created_by.
+created_at.
+updated_at.
+
+TABLE 3: CATEGORIES
+
+Suggested fields:
+
+id: UUID.
+name.
+slug.
+description.
+cover_image_url, optional.
+created_at.
+
+TABLE 4: FAVORITES
+
+Suggested fields:
+
+id: UUID.
+user_id.
+image_id.
+created_at.
+
+Add a unique constraint on user_id and image_id.
+
+Use foreign keys and appropriate deletion behavior.
+
+Do not allow a favorite to refer to a nonexistent image.
+
+DATABASE REQUIREMENTS:
+
+Provide SQL migrations or schema scripts.
+Add appropriate indexes.
+Validate data.
+Use safe queries.
+Use Row Level Security.
+Provide appropriate policies.
+Protect administrator-only operations.
+Protect member-owned favorite records.
+Prevent unauthorized role changes.
+Avoid exposing private profile information unnecessarily.
+
+RLS POLICY INTENT:
+
+PUBLIC:
+
+Can read published gallery images and categories.
+Cannot create, edit, or delete global gallery records.
+
+AUTHENTICATED MEMBERS:
+
+Can read public gallery content.
+Can manage their own favorites.
+Can update permitted fields on their own profile.
+Cannot change their own role.
+Cannot manage global images or categories.
+
+ADMINISTRATORS:
+
+Can manage gallery images and categories.
+Can view the administrative information necessary for the application.
+
+IMPORTANT:
+Implement and verify the actual policies. Do not merely document them.
+
+Never put a Supabase service-role key into frontend environment variables.
+
+A public anonymous key may be used in the frontend only with correctly configured security policies.
+
+Seed the gallery with a curated collection of photography.
+
+Include at least 20 image records if the data source supports it.
+
+Suggested categories:
+
+Nature.
+Architecture.
+Wildlife.
+Travel.
+Street Photography.
+
+Each record should contain:
+
+Stable ID.
+Title.
+Description.
+Category.
+Image URL or storage path.
+Tags.
+Featured status.
+
+Use appropriate image sources with suitable reuse permissions.
+
+Do not assume that every photograph on the internet is free to reuse.
+
+Avoid knowingly broken URLs.
+
+Use consistent image transformations or thumbnail sizes where supported.
+
+Use lazy loading for images below the fold.
+
+Provide descriptive alt text.
+
+Use a graceful fallback for failed image loads.
+
+IMPORTANT:
+If remote images are used, document that an internet connection is required.
+
+If external image hosting blocks direct downloads, explain the limitation.
+
+For uploaded images, use configured storage rather than pretending an external URL is a local file.
+
+Do not include unnecessary image API dependencies.
+
+Add a download control to the lightbox.
+
+When downloading an image:
+
+Verify that the image source permits the intended download behavior.
+Attempt the download using an appropriate method.
+Handle CORS and network failures.
+Show a success message only when the browser confirms that the download action was initiated successfully.
+Display an understandable error if the download cannot be completed.
+
+For images stored in configured application storage, use the correct storage URL or supported download mechanism.
+
+Do not pretend that every external image can be downloaded directly.
+
+Use a predictable filtering pipeline.
+
+Step 1:
+Start with the available gallery records.
+
+Step 2:
+Apply the selected category.
+
+Step 3:
+Apply the search query.
+
+Step 4:
+Apply the selected sort order.
+
+Step 5:
+Render the results.
+
+Ensure that changing one filter does not accidentally clear unrelated state.
+
+SEARCH:
+
+Case-insensitive.
+Search title, description, and tags.
+Clearable.
+Responsive.
+Correctly handles empty queries.
+
+CATEGORY FILTER:
+
+All.
+Nature.
+Architecture.
+Wildlife.
+Travel.
+Street.
+
+SORTING:
+
+Featured.
+Newest.
+Alphabetical.
+Most Favorited, only when supported by real counts.
+
+The active filter must be visible.
+
+Update result counts correctly.
+
+Display a useful empty state.
+
+Do not duplicate filtering logic across unrelated components.
+
+Every important asynchronous interaction must have an appropriate state.
+
+LOADING:
+
+Initial gallery loading.
+Authentication request.
+Image upload.
+Image update.
+Image deletion.
+Favorites loading.
+Profile update.
+
+EMPTY:
+
+No gallery images.
+No search results.
+No favorites.
+No categories.
+No administrative records.
+
+SUCCESS:
+
+Signed in.
+Account created.
+Favorite added or removed.
+Image created or updated.
+Category created.
+Profile updated.
+
+ERROR:
+
+Invalid credentials.
+Network unavailable.
+Upload failed.
+Permission denied.
+Image failed to load.
+Database operation failed.
+Download failed.
+
+Use inline messages or accessible notifications.
+
+Do not use alert() for every interaction.
+
+Do not silently ignore errors.
+
+Do not display a success notification when a request has failed.
+
+Prevent duplicate form submissions while a request is pending.
+
+Use restrained, professional animations.
+
+LANDING PAGE:
+
+Hero image fade-in.
+Subtle heading reveal.
+Smooth scrolling.
+Gentle image hover zoom.
+
+GALLERY:
+
+Smooth filter transitions.
+Card hover elevation.
+Subtle image scaling.
+Favorite heart interaction.
+Lightbox fade-in.
+
+AUTHENTICATION:
+
+Focus-state transitions.
+Button loading state.
+Clear form validation feedback.
+
+MEMBER DASHBOARD:
+
+Gentle card entrance.
+Smooth navigation.
+Subtle favorite interaction.
+
+ADMIN DASHBOARD:
+
+Sidebar transition.
+Button hover.
+Modal opening and closing.
+Upload progress indicator where supported.
+
+Do not animate every element simultaneously.
+
+Respect prefers-reduced-motion.
+
+Animations must never block functionality.
+
+Follow practical accessibility standards.
+
+Requirements:
+
+Semantic HTML.
+Correct heading hierarchy.
+Keyboard-accessible navigation.
+Visible focus states.
+Descriptive image alt text.
+Accessible button labels.
+Accessible form labels.
+Appropriate dialog semantics.
+Sufficient color contrast.
+Clear error messages.
+Focus management in dialogs.
+Keyboard support in the lightbox.
+Reduced-motion support.
+
+Do not use color as the only way to communicate success, failure, or selection.
+
+All essential functionality must work without relying exclusively on mouse hover.
+
+Implement authentication and permissions responsibly.
+
+Requirements:
+
+Do not store plaintext passwords.
+Do not place secret keys in frontend source code.
+Do not permit public users to assign themselves administrator privileges.
+Enforce role permissions through database policies and trusted authorization.
+Validate data before database writes.
+Handle expired sessions.
+Protect member-specific data.
+Prevent unauthorized image modifications.
+Avoid unsafe rendering of user-supplied HTML.
+Avoid exposing sensitive database errors to end users.
+Handle logout correctly.
+Verify ownership before modifying favorites or profiles.
+
+For development without Supabase:
+
+Use an explicitly labeled demo mode.
+Use non-sensitive sample accounts or a clearly documented local demo session.
+Never present a client-side role switch as secure administrator authentication.
+Never claim that demo authentication is production-secure.
+
+Production authentication must use the configured authentication provider.
+
+The website must remain testable while backend credentials are unavailable.
+
+Implement a clear development-mode strategy.
+
+If Supabase is configured:
+
+Use real authentication.
+Use the database.
+Use persistent favorites.
+Use actual image management.
+Apply database authorization policies.
+
+If Supabase is not configured:
+
+Allow public gallery browsing using local sample data.
+Allow search and filtering.
+Allow lightbox navigation.
+Allow local favorites using LocalStorage.
+Clearly identify authentication and administration as demo functionality.
+Do not pretend that changes persist to a shared production database.
+Do not display fake successful server operations.
+
+Provide a documented configuration switch or environment-based setup.
+
+Do not silently switch to an insecure mode in production.
+
+Organize the project clearly.
+
+Suggested structure:
+
+pixora-gallery/
+|
+|-- public/
+| |-- favicon.svg
+|
+|-- src/
+| |
+| |-- components/
+| | |-- Navbar.tsx
+| | |-- Footer.tsx
+| | |-- GalleryCard.tsx
+| | |-- GalleryGrid.tsx
+| | |-- CategoryFilters.tsx
+| | |-- SearchBar.tsx
+| | |-- Lightbox.tsx
+| | |-- FavoriteButton.tsx
+| | |-- LoadingState.tsx
+| | |-- EmptyState.tsx
+| | |-- ConfirmDialog.tsx
+| |
+| |-- pages/
+| | |-- LandingPage.tsx
+| | |-- GalleryPage.tsx
+| | |-- LoginPage.tsx
+| | |-- RegisterPage.tsx
+| | |-- MemberDashboard.tsx
+| | |-- FavoritesPage.tsx
+| | |-- ProfilePage.tsx
+| | |-- AdminDashboard.tsx
+| | |-- ManageImagesPage.tsx
+| | |-- ManageCategoriesPage.tsx
+| |
+| |-- layouts/
+| | |-- PublicLayout.tsx
+| | |-- MemberLayout.tsx
+| | |-- AdminLayout.tsx
+| |
+| |-- context/
+| | |-- AuthContext.tsx
+| | |-- GalleryContext.tsx
+| |
+| |-- hooks/
+| |
+| |-- services/
+| | |-- authService.ts
+| | |-- galleryService.ts
+| | |-- favoritesService.ts
+| |
+| |-- lib/
+| | |-- supabase.ts
+| |
+| |-- data/
+| | |-- sampleImages.ts
+| |
+| |-- types/
+| | |-- index.ts
+| |
+| |-- styles/
+| | |-- globals.css
+| | |-- design-tokens.css
+| |
+| |-- App.tsx
+| |-- main.tsx
+|
+|-- supabase/
+| |-- migrations/
+| |-- seed.sql
+|
+|-- .env.example
+|-- .gitignore
+|-- package.json
+|-- tsconfig.json
+|-- vite.config.ts
+|-- README.md
+
+You may adjust the structure if necessary, but preserve clear separation between components, pages, data services, and authentication.
+
+Do not create dozens of empty files merely to imitate an architecture.
+
+Every created file must have a purpose.
+
+Create a .env.example file.
+
+Include the appropriate public frontend configuration variables for the chosen Supabase integration.
+
+For example:
+
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+
+Use the environment variable names supported by the chosen implementation.
+
+Do not place secret keys in .env.example.
+
+Do not commit a populated .env file containing credentials.
+
+Document how to configure the application locally.
+
+If environment variables are missing, display a clear development configuration message and use only the documented demo capabilities.
+
+Optimize the experience.
+
+Requirements:
+
+Lazy-load below-the-fold photographs.
+Use appropriate image dimensions.
+Avoid unnecessary rerenders.
+Avoid loading every full-resolution image immediately.
+Use responsive image sizes where supported.
+Keep animation lightweight.
+Avoid excessive dependencies.
+Provide sensible loading feedback.
+Use pagination or load-more behavior for larger collections.
+Avoid repeated database queries when the data can be reused safely.
+Clean up subscriptions and event listeners.
+Avoid memory leaks.
+
+Do not sacrifice functionality for unnecessary optimization.
+
+Test the complete application.
+
+LANDING PAGE:
+
+Logo navigates correctly.
+Explore Gallery opens the gallery.
+Sign In opens authentication.
+Registration button opens registration.
+Category cards open the correct filtered gallery.
+Featured images open the lightbox.
+
+GALLERY:
+
+All images render or display a graceful fallback.
+Category filters work.
+Search works.
+Search and filters work together.
+Sorting works.
+Counts update correctly.
+Empty results display correctly.
+
+LIGHTBOX:
+
+Opens the correct image.
+Previous and next buttons work.
+Keyboard controls work.
+Escape closes the viewer.
+Background click closes the viewer.
+Clicking the image does not close it.
+Navigation respects the filtered image list.
+Focus is handled correctly.
+
+FAVORITES:
+
+Members can add favorites.
+Members can remove favorites.
+Favorites persist after refresh.
+Favorites are associated with the correct account.
+Guests are prompted to authenticate when required.
+Duplicate favorite records are prevented.
+
+AUTHENTICATION:
+
+Registration works.
+Login works.
+Logout works.
+Invalid credentials produce useful errors.
+Sessions persist appropriately.
+Password recovery works when configured.
+Unauthorized users cannot access protected routes.
+Members cannot become administrators through browser manipulation.
+
+MEMBER DASHBOARD:
+
+Correct member information appears.
+Favorites are displayed correctly.
+Profile updates work.
+Empty states work.
+Shared gallery changes appear correctly.
+
+ADMIN DASHBOARD:
+
+Only authorized administrators can access it.
+Statistics use real data.
+Adding images works.
+Editing images works.
+Deleting images works.
+Category management works.
+Validation works.
+Unauthorized modifications are rejected.
+Shared gallery data updates correctly.
+
+RESPONSIVENESS:
+
+Test 360px.
+Test 390px.
+Test 768px.
+Test 1024px.
+Test 1280px.
+Test 1440px.
+
+SECURITY:
+
+Verify database access policies.
+Verify role restrictions.
+Verify that public registration cannot assign admin privileges.
+Verify that private keys are not included in frontend bundles.
+Verify that unauthorized users cannot perform administrative operations.
+
+QUALITY:
+
+No broken navigation.
+No dead buttons.
+No uncaught JavaScript errors.
+No avoidable console errors.
+No horizontal overflow.
+No false success messages.
+No fabricated database results.
+No exposed credentials.
+
+Run the available build and tests.
+
+Report which tests actually passed, which failed, and which could not be executed.
+
+Do not claim that tests passed without running them.
+
+Create a complete README.md containing:
+
+Project name.
+Tagline.
+Project overview.
+Problem and purpose.
+Feature list.
+Technology stack.
+Screenshots section.
+Folder structure.
+Installation instructions.
+Environment configuration.
+Supabase setup.
+Database schema setup.
+Row Level Security configuration.
+Authentication setup.
+Local demo mode limitations.
+How to run the application.
+How to build for production.
+Deployment instructions.
+Known limitations.
+Testing instructions.
+Image source and licensing information.
+GitHub repository information.
+Future improvements.
+
+Do not invent a deployed URL.
+
+Do not invent screenshots.
+
+Do not claim that a backend is connected if it has not been configured.
+
+Prepare the project for GitHub.
+
+Recommended repository name:
+
+CodeAlpha_ImageGallery
+
+Requirements:
+
+Clean folder structure.
+Meaningful file names.
+No secrets in the repository.
+Appropriate .gitignore.
+.env.example.
+Complete README.
+Successful production build.
+No unnecessary generated files.
+
+Prepare the project for deployment on Vercel or an equivalent hosting service.
+
+Document:
+
+Build command.
+Output directory.
+Required environment variables.
+Routing configuration.
+Supabase configuration.
+Production verification steps.
+
+After deployment, verify:
+
+Landing page loads.
+Gallery loads.
+Navigation works.
+Authentication works when configured.
+Protected routes behave correctly.
+Favorites persist.
+Admin operations work.
+Images load.
+No environment configuration errors occur.
+
+Do not claim the application has been deployed unless deployment has actually been completed.
+
+Implement the application in the following order.
+
+PHASE 1: PROJECT FOUNDATION
+
+Create project structure.
+Configure dependencies.
+Configure routing.
+Create design tokens.
+Create reusable components.
+Create responsive global styling.
+
+PHASE 2: LANDING PAGE
+
+Build navigation.
+Build hero.
+Build featured photography.
+Build category section.
+Build gallery preview.
+Build footer.
+
+PHASE 3: PUBLIC GALLERY
+
+Create image data.
+Build responsive image grid.
+Implement search.
+Implement filters.
+Implement sorting.
+Implement lightbox.
+Implement keyboard controls.
+Implement download handling.
+
+PHASE 4: FAVORITES
+
+Implement favorite controls.
+Implement favorites page.
+Implement LocalStorage fallback.
+Prepare persistent database integration.
+
+PHASE 5: AUTHENTICATION
+
+Implement login.
+Implement registration.
+Implement password recovery.
+Implement session handling.
+Implement protected routes.
+
+PHASE 6: MEMBER DASHBOARD
+
+Implement overview.
+Implement favorites management.
+Implement profile settings.
+Implement logout.
+
+PHASE 7: ADMIN DASHBOARD
+
+Implement overview.
+Implement image management.
+Implement category management.
+Implement validation and confirmations.
+
+PHASE 8: DATABASE
+
+Create schema.
+Create migrations.
+Create appropriate indexes.
+Configure Row Level Security.
+Connect services.
+Verify permissions.
+
+PHASE 9: POLISH
+
+Refine visual consistency.
+Add appropriate animations.
+Improve mobile layouts.
+Add loading and empty states.
+Improve accessibility.
+Optimize image loading.
+
+PHASE 10: TESTING AND DELIVERY
+
+Run tests.
+Fix defects.
+Verify the production build.
+Complete README.
+Prepare GitHub.
+Document deployment.
+
+Do not attempt to implement every feature in a single enormous, unreviewed code block.
+
+Build incrementally and preserve a working application throughout development.
+
+Build the complete website, not just the landing page.
+Keep the Image Gallery as the primary purpose.
+Use a distinctive design system.
+Use different color combinations for the landing page, gallery, authentication, member dashboard, and admin dashboard.
+Keep the interface visually consistent.
+Implement all visible interactions.
+Do not add buttons without functionality.
+Do not create fake database operations.
+Do not use insecure client-only administrator authorization in production.
+Do not expose API secrets.
+Do not invent credentials.
+Do not fabricate statistics.
+Do not create unrelated dashboards.
+Do not duplicate gallery datasets across roles.
+Keep authentication optional for public browsing.
+Ensure the required gallery features work even when authentication is not configured.
+Use real data when connected to a database.
+Provide an honest local demo mode.
+Handle network failures.
+Handle missing images.
+Keep the website responsive.
+Preserve accessibility.
+Test all essential interactions.
+Do not claim features are complete without implementation.
+Do not claim deployment or testing has succeeded unless verified.
+
+Deliver the complete Pixora Gallery application.
+
+The finished product must include:
+
+Premium landing page.
+Responsive navigation.
+Public image gallery.
+Image category filters.
+Working search.
+Sorting.
+Interactive image cards.
+Full-screen lightbox.
+Previous and next navigation.
+Keyboard controls.
+Favorite system.
+Favorites page.
+Login page.
+Registration page.
+Password recovery when configured.
+Member dashboard.
+Profile settings.
+Administrator dashboard.
+Image management.
+Category management.
+Database schema and migrations.
+Authentication integration.
+Access control.
+Loading states.
+Empty states.
+Error handling.
+Responsive design.
+Accessibility improvements.
+README.
+Environment example.
+GitHub preparation.
+Deployment instructions.
+
+The public gallery must remain usable without registration.
+
+The authentication and administration features must not break the core image gallery if the backend is not configured.
+
+The member and administrator experiences must be visually distinct and must have genuinely different permissions.
+
+The same gallery data must be shared across the public gallery, member dashboard, and administrator dashboard.
+
+FINAL RESPONSE FROM THE CODING ENVIRONMENT:
+
+After implementation, provide:
+
+A summary of what was built.
+The complete project file structure.
+The technologies used.
+The features that are fully implemented.
+The features that require external configuration.
+The steps to run the application locally.
+The required Supabase setup steps.
+The commands to build the project.
+The instructions for uploading it to GitHub.
+The deployment instructions.
+The tests executed and their actual results.
+Any known limitations or unfinished work.
+
+If any feature cannot be completed, clearly identify it and explain what remains.
+
+Do not stop after creating the visual interface.
+
+Build the application, validate its functionality, and deliver a professional, maintainable result.
+
+THE FINAL GOAL:
+
+Pixora Gallery must feel like a real photography product, not a generic student project.
+
+It must combine immersive photography, premium UI/UX, meaningful interactions, distinct user experiences, secure role-based access, reliable data handling, and a complete frontend development workflow.

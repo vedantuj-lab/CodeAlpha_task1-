@@ -1,0 +1,6 @@
+{
+  "name": "Pixora Gallery",
+  "description": "Every image tells a story. A premium editorial photography gallery with dynamic filtering, live search, favorites persistence, and accessible full-screen lightbox.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
